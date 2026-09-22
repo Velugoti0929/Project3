@@ -14,7 +14,7 @@ pipeline {
             }
         }
 
-      /*  stage('Build') {
+       stage('Build') {
             steps {
                 sh 'mvn clean package'
             }
@@ -26,7 +26,7 @@ pipeline {
             }
         }
 
-        stage('Docker Build') {
+       /* stage('Docker Build') {
             steps {
                 sh 'docker build -t ${IMAGE_NAME}:latest .'
             }
