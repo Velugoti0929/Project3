@@ -4,7 +4,7 @@ ageny any
 stages {
 stage('Checkout') {
 steps {
-checkout 'scm"
+checkout 'scm'
 }
 }
 stage('Build') {
@@ -16,4 +16,18 @@ sh'mvn clean package'
 steps {
 sh'mvn test'
 }
-]
+ }
+ stage('Docker build') {
+  steps {
+   sh ' docker build -t $(IMAGE_NAME):latest .'
+  }
+ }
+stage ('Docker run') {
+ steps {
+  sh '''
+  docker run -d \
+  -p 8081:8080
+  $(IMAGE_NAME):LATEST
+  }
+  }
+  }
