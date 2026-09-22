@@ -27,6 +27,7 @@ stage ('Docker run') {
   docker run -d \
   -p 8081:8080
   $(IMAGE_NAME):LATEST
+  '''
   }
   }
 }  
