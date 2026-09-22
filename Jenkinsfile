@@ -29,4 +29,4 @@ stage ('Docker run') {
   $(IMAGE_NAME):LATEST
   }
   }
-  }
+}  
